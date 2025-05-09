@@ -34,3 +34,14 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+Issues I faced
+1. In creating a dynamic page fetching blog a blog post by the slug, I faced issues. 
+
+Solution:
+it turned out the issue was with my api url. First I did not include the api resourse name, then when I figured that out, I then learned did not just have to follow it wwith a slash and then the slug variable. I had to follow it with a question mark and then with slug=${slug}
+
+2. After that the post would not display on the browser then when I console.log(post) it displayed the expexted post on the console.
+
+Solution:
+I console.log(post.title) and got undifined on the console. so I had a second look at console.log(post) and discovered it was a list so when console.log(post[0].title) it gave me the expected results.
